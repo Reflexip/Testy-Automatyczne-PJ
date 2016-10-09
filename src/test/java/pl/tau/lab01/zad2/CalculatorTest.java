@@ -1,4 +1,4 @@
-package pl.tau.lab01.zad1;
+package pl.tau.lab01.zad2;
 
 import static org.hamcrest.CoreMatchers.not;
 import org.junit.Test;
@@ -13,13 +13,13 @@ public class CalculatorTest {
     
     @Test
     public void testAdd() {
-        assertEquals(5,calculator.add(2, 3));
+        assertEquals(5.00,calculator.add(2.00, 3.00), 2);
     }
 
     @Test
     public void testSub() {
-        Integer number = Integer.valueOf(3);
-        assertSame("Powinny być takie same", number, calculator.sub(6, 3));
+        Double number = 3.33;
+        assert number == calculator.sub(4, 0.67);
     }
 
     @Test
@@ -29,16 +29,10 @@ public class CalculatorTest {
 
     @Test
     public void testDiv() {
-        assert 10 <= calculator.div(20, 2)
+        assert 10.00 <= calculator.div(20.00, 2.00)
                 : "Błąd, wynik powinien być większy lub równy 10";
     }
     
-    
-    @Test(expected = ArithmeticException.class)
-    public void testDivWithException() {
-        calculator.div(10, 0);
-    }
-
     @Test
     public void testGreater() {
         assertTrue("Błąd, powinno zwrócić true", calculator.greater(3, 1));
