@@ -1,5 +1,6 @@
-package pl.tau.lab1.zadGwiazdka;
+package pl.tau.lab01.zadGwiazdka;
 
+import pl.tau.lab01.zadGwiazdka.Kontrakt;
 import java.util.Arrays;
 import java.util.Collection;
 import org.junit.Test;

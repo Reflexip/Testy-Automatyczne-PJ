@@ -1,4 +1,4 @@
-package pl.tau.lab1.zadGwiazdka;
+package pl.tau.lab01.zadGwiazdka;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

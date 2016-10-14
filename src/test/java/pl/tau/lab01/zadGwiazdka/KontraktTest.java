@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.tau.lab1.zadGwiazdka;
+package pl.tau.lab01.zadGwiazdka;
 
+import pl.tau.lab01.zadGwiazdka.NieudanyPsikusException;
+import pl.tau.lab01.zadGwiazdka.Kontrakt;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
