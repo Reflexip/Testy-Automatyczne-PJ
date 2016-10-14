@@ -14,7 +14,13 @@ public class Calculator {
         return a * b;
     }
     public int div(int a, int b){
-        return a / b;
+        int wynik = 0;
+        try{
+            wynik = a / b;
+        }
+        catch(ArithmeticException e){            
+        }
+        return wynik;
     }
     public boolean greater(int a, int b){
         if(a > b)

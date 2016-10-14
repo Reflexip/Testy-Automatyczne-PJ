@@ -32,11 +32,10 @@ public class CalculatorTest {
         assert 10 <= calculator.div(20, 2)
                 : "Błąd, wynik powinien być większy lub równy 10";
     }
-    
-    
-    @Test(expected = ArithmeticException.class)
+   
+    @Test
     public void testDivWithException() {
-        calculator.div(10, 0);
+        calculator.div(3, 0);
     }
 
     @Test
