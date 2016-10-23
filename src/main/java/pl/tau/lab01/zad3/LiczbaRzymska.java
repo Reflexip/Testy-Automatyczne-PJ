@@ -19,21 +19,16 @@ public class LiczbaRzymska {
             number *= -1;
         
         String result = "";
-
         if ((number > 3999) || (number <= 0))
-        {
             return result;
-        }
 
-        while ((number > 0) && (i < ROMAN_N))
-        {
-        if(number >= arabic[i])
-        {
+        while ((number > 0) && (i < ROMAN_N)){
+        if(number >= arabic[i]){
         number -= arabic[i];
         result += roman[i];
         }
         else if ((i%2 == 0) &&
-        (i<ROMAN_N-2) && // 9xx condition
+        (i<ROMAN_N-2) && 
         (number >= arabic[i] - arabic[i+2]) &&
         (arabic[i+2] != arabic[i] - arabic[i+2]))
         {
@@ -43,7 +38,7 @@ public class LiczbaRzymska {
         i++;
         }
         else if ((i%2 == 1) &&
-        (i<ROMAN_N-1) && //4xx condition
+        (i<ROMAN_N-1) && 
         (number >= arabic[i] - arabic[i+1]) &&
         (arabic[i+1] != arabic[i] - arabic[i+1]))
         {
