@@ -7,7 +7,6 @@ public class LiczbaRzymskaTest {
     LiczbaRzymska ujemna = new LiczbaRzymska(-9);
     LiczbaRzymska zaDuża = new LiczbaRzymska(4500);
     LiczbaRzymska zero = new LiczbaRzymska(0);
-    LiczbaRzymska zmiennoprzecinkowa = new LiczbaRzymska((int) 10.50);
     
     
     public LiczbaRzymskaTest() {
@@ -25,9 +24,6 @@ public class LiczbaRzymskaTest {
     public void testZero(){
         assertNotNull(zero.toString());
     }
-    @Test 
-    public void testZmiennoprzecinkowa(){
-        assertSame("X", zmiennoprzecinkowa.toString());
-    }
+    
     
 }
