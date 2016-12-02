@@ -16,10 +16,7 @@ public class LiczbaRzymskaTest {
     public void testUjemna() {
         assertEquals("IX", ujemna.toString());
     }
-    @Test
-    public void testZaDuża(){
-        assert "" == zaDuża.toString();
-    }
+   
     @Test
     public void testZero(){
         assertNotNull(zero.toString());
