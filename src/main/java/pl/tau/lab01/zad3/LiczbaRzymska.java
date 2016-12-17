@@ -2,56 +2,93 @@ package pl.tau.lab01.zad3;
 
 
 public class LiczbaRzymska {
-    private int number;
-    private static final int arabic[] = {1000, 500, 100, 50, 10, 5, 1};
-    private static final char roman[] = {'M', 'D', 'C', 'L', 'X', 'V', 'I'};
-    private static final int ROMAN_N = arabic.length;
     
-    public LiczbaRzymska(int number) {
-        this.number = number;
-    }
-    
-    
-    public String toString(){
-        int i = 0; 
-        if(number < 0)
-            number *= -1;
-        
-        String result = "";
-        if ((number > 3999) || (number <= 0))
-            return result;
+	private int liczba;
+	
+	public String toString() {
+		int mnoznik=0, tab[] = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+		String suma="";
+		
+		if(liczba>3999) return "More than 3999";
+		if(liczba<0) liczba*=-1;
+		
+		for(int j=0;j<tab.length;j++){
+			if(liczba>=tab[j]){
+				mnoznik=liczba/tab[j];
+				suma+=addLiczba(tab[j], mnoznik);
+			}
+		}
+		return suma;
+	}
+	
+	private String addLiczba(int ilosc, int mnoznik){
+		String litera="", suma="";
+		
+		switch (ilosc) {
+		case 1000:
+			litera="M";
+			break;
+		
+		case 900:
+			litera="CM";
+			break;
+		
+		case 500:
+			litera="D";
+			break;
+			
+		case 400:
+			litera="CD";
+			break;
+		
+		case 100:
+			litera="C";
+			break;
+			
+		case 90:
+			litera="XC";
+			break;
+			
+		case 50:
+			litera="L";
+			break;
+			
+		case 40:
+			litera="XL";
+			break;
+			
+		case 10:
+			litera="X";
+			break;
+			
+		case 9:
+			litera="IX";
+			break;
+		
+		case 5:
+			litera="V";
+			break;
+			
+		case 4:
+			litera="IV";
+			break;
+			
+		case 1:
+			litera="I";
+			break;
+			
+		default:
+			break;
+		}
+		for(int i=0; i<mnoznik; i++){
+			liczba-=ilosc;
+			suma+=litera;
+		}
+		return suma;
+	}
 
-        while ((number > 0) && (i < ROMAN_N)){
-        if(number >= arabic[i]){
-        number -= arabic[i];
-        result += roman[i];
-        }
-        else if ((i%2 == 0) &&
-        (i<ROMAN_N-2) && 
-        (number >= arabic[i] - arabic[i+2]) &&
-        (arabic[i+2] != arabic[i] - arabic[i+2]))
-        {
-        number -= arabic[i] - arabic[i+2];
-        result += roman[i+2];
-        result += roman[i];
-        i++;
-        }
-        else if ((i%2 == 1) &&
-        (i<ROMAN_N-1) && 
-        (number >= arabic[i] - arabic[i+1]) &&
-        (arabic[i+1] != arabic[i] - arabic[i+1]))
-        {
-        number -= arabic[i] - arabic[i+1];
-        result += roman[i+1];
-        result += roman[i];
-        i++;
-        }
-        else
-        {
-        i++;
-        }
-        }
-
-        return result;
-    }
+	public void setLiczba(int liczba) {
+		this.liczba = liczba;
+	}
+	
 }

@@ -4,23 +4,33 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LiczbaRzymskaTest {
-    LiczbaRzymska ujemna = new LiczbaRzymska(-9);
-    LiczbaRzymska zaDuża = new LiczbaRzymska(4500);
-    LiczbaRzymska zero = new LiczbaRzymska(0);
-    
-    
-    public LiczbaRzymskaTest() {
-    }
-
-    @Test
-    public void testUjemna() {
-        assertEquals("IX", ujemna.toString());
-    }
    
-    @Test
-    public void testZero(){
-        assertNotNull(zero.toString());
-    }
+	
+	LiczbaRzymska liczbaRzymska =  new LiczbaRzymska();
+
+	@Test
+	public void testNegative() {
+		liczbaRzymska.setLiczba(-1);
+		assertEquals("I", liczbaRzymska.toString());
+	}
+	
+	@Test
+	public void testToHighValue() {
+		liczbaRzymska.setLiczba(4000);
+		assertEquals("More than 3999", liczbaRzymska.toString());
+	}
+	
+	@Test
+	public void testEquals1234(){
+		liczbaRzymska.setLiczba(1234);
+		assertEquals("MCCXXXIV", liczbaRzymska.toString());
+	}
+	
+	@Test
+	public void testEquals946(){
+		liczbaRzymska.setLiczba(946);
+		assertEquals("CMXLVI", liczbaRzymska.toString());
+	}
     
     
 }

@@ -1,7 +1,10 @@
 package pl.tau.lab01.zad1;
 
 public class Calculator {
- 
+    
+    private int lastResult;
+    private boolean lastBooleanResult;
+    private Class<? extends ArithmeticException> exception = null;
     
     
     public int add(int a, int b){
@@ -27,4 +30,19 @@ public class Calculator {
             return true;
         else return false;
     }
+    public int getLastResult() {
+		return lastResult;
+	}
+
+	public boolean isLastBooleanResult() {
+		return lastBooleanResult;
+	}
+
+	public Class<? extends ArithmeticException> getException() {
+		return exception;
+	}
+
+	private void setException(Class<? extends ArithmeticException> exception) {
+		this.exception = exception;
+	}
 }
