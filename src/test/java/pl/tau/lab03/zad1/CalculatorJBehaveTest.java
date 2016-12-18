@@ -14,12 +14,9 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
-/**
- *
- * @author Dawid
- */
-public class CalcJBehaveTest extends JUnitStory{
-    // Here we specify the configuration, starting from default
+public class CalculatorJBehaveTest extends JUnitStory{
+
+	// Here we specify the configuration, starting from default
 	// MostUsefulConfiguration, and changing only what is needed
 	@Override
 	public Configuration configuration() {
@@ -35,6 +32,6 @@ public class CalcJBehaveTest extends JUnitStory{
 	@Override
 	public InjectableStepsFactory stepsFactory() {
 		// varargs, can have more that one steps classes
-		return new InstanceStepsFactory(configuration(), new CalcJBehaveSteps());
+		return new InstanceStepsFactory(configuration(), new CalculatorJBehaveSteps());
 	}
 }

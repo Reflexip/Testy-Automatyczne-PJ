@@ -2,7 +2,7 @@ package pl.tau.lab01.zad3;
 
 
 public class LiczbaRzymska {
-    
+	
 	private int liczba;
 	
 	public String toString() {
@@ -90,5 +90,6 @@ public class LiczbaRzymska {
 	public void setLiczba(int liczba) {
 		this.liczba = liczba;
 	}
+	
 	
 }

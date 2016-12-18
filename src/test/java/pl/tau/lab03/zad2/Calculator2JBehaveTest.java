@@ -18,7 +18,7 @@ import org.jbehave.core.steps.InstanceStepsFactory;
  *
  * @author Dawid
  */
-public class Calc2JBehaveTest extends JUnitStory {
+public class Calculator2JBehaveTest extends JUnitStory {
 // Here we specify the configuration, starting from default
 	// MostUsefulConfiguration, and changing only what is needed
 	@Override
@@ -35,6 +35,6 @@ public class Calc2JBehaveTest extends JUnitStory {
 	@Override
 	public InjectableStepsFactory stepsFactory() {
 		// varargs, can have more that one steps classes
-		return new InstanceStepsFactory(configuration(), new Calc2JBehaveSteps());
+		return new InstanceStepsFactory(configuration(), new Calculator2JBehaveSteps());
 	}
 }
