@@ -26,5 +26,6 @@ public class RebelHomeSteps {
     @Then("Registration page is shown")
     public void registrationPageIsShown(){
        assertEquals("REBEL.pl: Nowy użytkownik - sklep z grami planszowymi", pages.registration().getTitle());
-    }	
+    }
+    
 }

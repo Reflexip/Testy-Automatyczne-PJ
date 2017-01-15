@@ -23,7 +23,9 @@ Then Game page is shown
 
 Given user is on Game page
 When user click add to basket
+Then basket page is shown
 
 Given user is on Basket page
 When user removing item
-Then user go home page
+When user go home page
+Then Home page is shown

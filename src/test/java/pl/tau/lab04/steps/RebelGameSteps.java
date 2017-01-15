@@ -1,7 +1,9 @@
 package pl.tau.lab04.steps;
 
 import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import static org.junit.Assert.assertEquals;
 import pl.tau.lab04.Pages;
 
 public class RebelGameSteps {
@@ -19,5 +21,9 @@ public class RebelGameSteps {
     @When("user click add to basket")
     public void clickAddToBasket(){
         pages.game().clickAddToBasket();
+    }
+    @Then("basket page is shown")
+    public void goToBasket(){
+        assertEquals("REBEL.pl: Twój koszyk - sklep z grami planszowymi", pages.basket().getTitle());
     }
 }

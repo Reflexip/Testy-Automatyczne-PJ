@@ -29,6 +29,7 @@ import org.jbehave.web.selenium.WebDriverProvider;
 import org.jbehave.web.selenium.WebDriverScreenshotOnFailure;
 import org.jbehave.web.selenium.WebDriverSteps;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pl.tau.lab04.steps.RebelBasketSteps;
 import pl.tau.lab04.steps.RebelGameSteps;
 import pl.tau.lab04.steps.RebelHomeSteps;
 import pl.tau.lab04.steps.RebelRegistrationSteps;
@@ -67,11 +68,12 @@ public class RebelWebTest extends JUnitStories{
 	public InjectableStepsFactory stepsFactory() {
 		Configuration configuration = configuration();
 		return new InstanceStepsFactory(configuration,
-                new RebelHomeSteps(pages),
-                new RebelRegistrationSteps(pages),
-                new RebelGameSteps(pages),
-                steps,
-		new WebDriverScreenshotOnFailure(driverProvider, configuration.storyReporterBuilder()));
+                    new RebelHomeSteps(pages),
+                    new RebelRegistrationSteps(pages),
+                    new RebelGameSteps(pages),
+                    new RebelBasketSteps(pages),
+                    steps,
+                    new WebDriverScreenshotOnFailure(driverProvider, configuration.storyReporterBuilder()));
         }
         
         @Override

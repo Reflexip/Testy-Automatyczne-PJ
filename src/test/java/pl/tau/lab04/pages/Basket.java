@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 public class Basket extends WebDriverPage{
     private final static String REMOVE_LINK_ID = "//*[@id='cart']/table[1]/tbody[1]/tr[2]/td[6]/a[3]";
-    private final static String HOME_LINK_ID = "//*[@id='logoMain']/a[1]";
+    private final static String HOME_LINK_ID = "//*[@id='topHeader']/table[2]/tbody[1]/tr[1]/td[1]/h1[1]/a[1]";
     
     public Basket(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -19,10 +19,10 @@ public class Basket extends WebDriverPage{
     }
     
     public void clickRemoveFromBasket(){
-        findElement(By.xpath(REMOVE_LINK_ID)).click();
+        findElement(By.xpath(REMOVE_LINK_ID)).click();        
     }
     
     public void clickGoHome(){
-        findElement(By.xpath(HOME_LINK_ID));
+        findElement(By.xpath(HOME_LINK_ID)).click();
     }
 }

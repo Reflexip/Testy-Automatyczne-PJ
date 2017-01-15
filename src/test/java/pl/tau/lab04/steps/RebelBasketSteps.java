@@ -3,6 +3,7 @@ package pl.tau.lab04.steps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import static org.junit.Assert.assertEquals;
 import pl.tau.lab04.Pages;
 
 public class RebelBasketSteps {
@@ -13,7 +14,7 @@ public class RebelBasketSteps {
     }
     
     @Given("user is on Basket page")
-    public void userOnHomePage(){
+    public void userOnBasketPage(){
         pages.basket().open();
     }
     
@@ -22,8 +23,12 @@ public class RebelBasketSteps {
         pages.basket().clickRemoveFromBasket();
     }
     
-    @Then("user go home page")
+    @When("user go home page")
     public void goHomePage(){
         pages.basket().clickGoHome();
+    }
+    @Then("Home page is shown")
+    public void gamePageIsShown(){
+        assertEquals("REBEL.pl: Największy polski sklep z grami - sklep z grami planszowymi", pages.home().getTitle());
     }
 }

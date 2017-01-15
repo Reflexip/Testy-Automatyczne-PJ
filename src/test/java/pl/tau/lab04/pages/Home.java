@@ -19,4 +19,6 @@ public class Home extends WebDriverPage{
     public void clickRegistration(){
         findElement(By.linkText("Rejestracja")).click();
     }
+    
+   
 }
