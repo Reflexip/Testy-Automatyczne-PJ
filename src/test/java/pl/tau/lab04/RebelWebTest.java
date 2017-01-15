@@ -48,9 +48,7 @@ public class RebelWebTest extends JUnitStories{
     public RebelWebTest(){
         System.setProperty("webdriver.chrome.driver","C:/Users/Dawid/Programowanie/Bilbioteki/chromedriver.exe");
     }
-    
-    
-    
+       
     @Override
 	public Configuration configuration() {
 		Class<? extends Embeddable> embeddableClass = this.getClass();

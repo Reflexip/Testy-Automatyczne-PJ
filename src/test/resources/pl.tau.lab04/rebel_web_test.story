@@ -21,9 +21,13 @@ When user fills search field
 When user click search button
 Then Game page is shown
 
+Scenario: User add game to basket
+
 Given user is on Game page
 When user click add to basket
 Then basket page is shown
+
+Scenario: User remove game from basket
 
 Given user is on Basket page
 When user removing item
