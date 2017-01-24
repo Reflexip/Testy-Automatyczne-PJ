@@ -11,10 +11,6 @@ import org.jbehave.core.annotations.When;
 import static org.junit.Assert.*;
 import pl.tau.lab01.zad3.LiczbaRzymska;
 
-/**
- *
- * @author Dawid
- */
 public class LiczbaRzymskaJBehaveSteps {
     
    private LiczbaRzymska liczbaRzymska;

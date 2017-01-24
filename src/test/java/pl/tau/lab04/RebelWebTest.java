@@ -50,34 +50,34 @@ public class RebelWebTest extends JUnitStories{
     }
        
     @Override
-	public Configuration configuration() {
-		Class<? extends Embeddable> embeddableClass = this.getClass();
-		return new SeleniumConfiguration()
-                .useSeleniumContext(context)
-                .useWebDriverProvider(driverProvider)
-				.useStepMonitor(new SeleniumStepMonitor(contextView, context, new SilentStepMonitor()))
-				.useStoryLoader(new LoadFromClasspath(embeddableClass))
-                .useStoryReporterBuilder(new StoryReporterBuilder()
-                    .withCodeLocation(codeLocationFromClass(embeddableClass))
-                    .withDefaultFormats()
-                    .withFormats(Format.CONSOLE, Format.TXT));
-	}
-        @Override
-	public InjectableStepsFactory stepsFactory() {
-		Configuration configuration = configuration();
-		return new InstanceStepsFactory(configuration,
-                    new RebelHomeSteps(pages),
-                    new RebelRegistrationSteps(pages),
-                    new RebelGameSteps(pages),
-                    new RebelBasketSteps(pages),
-                    steps,
-                    new WebDriverScreenshotOnFailure(driverProvider, configuration.storyReporterBuilder()));
-        }
-        
-        @Override
-        protected List<String> storyPaths() {
-           return new StoryFinder().findPaths(
-				codeLocationFromClass(this.getClass()).getFile(),
-				asList("**/rebel_web_test.story"), null);
-        }
+    public Configuration configuration() {
+            Class<? extends Embeddable> embeddableClass = this.getClass();
+            return new SeleniumConfiguration()
+            .useSeleniumContext(context)
+            .useWebDriverProvider(driverProvider)
+                            .useStepMonitor(new SeleniumStepMonitor(contextView, context, new SilentStepMonitor()))
+                            .useStoryLoader(new LoadFromClasspath(embeddableClass))
+            .useStoryReporterBuilder(new StoryReporterBuilder()
+                .withCodeLocation(codeLocationFromClass(embeddableClass))
+                .withDefaultFormats()
+                .withFormats(Format.CONSOLE, Format.TXT));
+    }
+    @Override
+    public InjectableStepsFactory stepsFactory() {
+            Configuration configuration = configuration();
+            return new InstanceStepsFactory(configuration,
+                new RebelHomeSteps(pages),
+                new RebelRegistrationSteps(pages),
+                new RebelGameSteps(pages),
+                new RebelBasketSteps(pages),
+                steps,
+                new WebDriverScreenshotOnFailure(driverProvider, configuration.storyReporterBuilder()));
+    }
+
+    @Override
+    protected List<String> storyPaths() {
+       return new StoryFinder().findPaths(
+                            codeLocationFromClass(this.getClass()).getFile(),
+                            asList("**/rebel_web_test.story"), null);
+    }
 }
